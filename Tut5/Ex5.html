@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <title>HTML5</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">   
+</head>
+<body>
+    <div id="main-wrapper">
+        <header>
+      <h1 class="logo" style="color: white;">HTML<div id="five">5</h1>  
+      
+      <nav class="primary">
+          <div class="group">
+            <a href="#">Link 1</a> 
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a> 
+            <a href="#">Link 4</a> 
+            <a href="#">Link 5</a>
+      </nav>
+    </header>
+
+    <div class="content-wrap group">
+        <section id ="main-content">
+        <article class="posts group">
+            <img class="thumbnail" src="images/thumbnail.jpg" alt="thumbnail"/>
+        <div>
+        <h1 id="heading"><a href="#" title=""> This is a Lorem Ipsum Heading</a> </h1>
+        <p>Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti 
+            sociosqu ad litora torquent per conubia mostra, per inceptos himenaeos.
+            Mauris in erat justo.</p>
+        <a class="more" href="#" title="readmore">Read More</a>
+        </div>
+    </article>
+
+    <article class="posts group">
+        <img class="thumbnail" src="images/thumbnail.jpg" alt="thumbnail"/>
+        <div>
+    <h1 id="heading"><a href="#" title=""> This is a Lorem Ipsum Heading</a> </h1>
+    <p>Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti 
+        sociosqu ad litora torquent per conubia mostra, per inceptos himenaeos.
+        Mauris in erat justo.</p>
+        <a class="more" href="#" title="readmore">Read More</a>
+    </div>
+</article>
+
+<article class="posts group">
+    <img class="thumbnail" src="images/thumbnail.jpg" alt="thumbnail"/>
+        <div>
+<h1 id="heading"><a href="#" title="" > This is a Lorem Ipsum Heading</a> </h1>
+<p>Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti 
+    sociosqu ad litora torquent per conubia mostra, per inceptos himenaeos.
+    Mauris in erat justo.</p>
+    <a class="more" href="#" title="readmore">Read More</a>
+</div>
+</article>
+</section>
+
+<aside>
+    <div class="side-box">
+        <h2 class="sidebar-heading" >Sidebar Links</h2>
+            <a href="#" id="sidebar">Link 1</a><br><br>
+            <a href="#" id="sidebar">Link 2</a><br><br>
+            <a href="#" id="sidebar">Link 3</a><br><br>
+            <a href="#" id="sidebar">Link 4</a><br><br>
+        </div>
+    <div class="side-box">
+        <h2 class="side-box-heading">Other Widgets</h2>
+        <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,lorem quis bibendum auctor,nisi elit consequat ipsum, nec sagittis dem nibh id elit.</p>
+        <br>
+         Duis sed olio sit amet nibh vulputate cursus a sit amet mauris.
+        </div>
+        <aside>
+        </div>
+
+        
+        <footer>
+        <small>Copyright <a href="#" title="HTML 5">YourRight</a>. All rights reserved</small>
+
+    </footer>
+    </div>
+</body>
+<style>
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:border-box ;
+    box-sizing: border-box;
+
+}
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+
+}
+body{
+    background: #cccccc;
+    font-family:  Helvetica, Arial, sans-serif;
+    line-height: 1.Sem;
+    font-size: 14px ;
+}
+#heading a{
+    color: black;
+    text-decoration: none;
+}
+
+#heading a:hover {
+    color:#d7721c;
+}
+
+#main-wrapper{
+    width: 960px;
+    margin: 0 auto;
+
+}
+header{
+    background: #333333;
+    padding-top: 10px;
+}
+.logo {
+    margin-left: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#five {
+    color: #f58220;
+    font-size: 60px;
+    margin-left: 85px;
+    margin-top: -50px;
+}
+
+.primary ul li{
+    float: left;
+    border-right: 1px solid #333333;
+}
+.primary .group{
+    background: #666666;
+    height: 52px;
+    font-size: 20px;
+    padding: 15px 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.primary a {
+    font-size: 20px;
+    padding: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    border-right: 1px black solid;
+}
+.primary a:hover{
+    background: #777777;
+
+}
+.content-wrap{
+    background: #e5e5e5;
+
+}
+#main-content{
+    background: #ffffff;
+    float:left;
+    width: 660px;
+    padding: 40px 20px;
+}
+.thumbnail{
+    float: left;
+   margin-right: 20px;
+
+}
+.posts{
+    clear: both;
+    padding-bottom: 40px;
+    margin-bottom:40px;
+    border-bottom: 1px solid #bbbbbb;
+
+}
+.posts div{
+    overflow: hidden;
+}
+.post a{
+    font-size: 24px;
+    color: #333333;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.post h1 a:hover{
+    color: #f58220;
+}
+.posts p{
+    padding: 10px 0 20px 0;
+
+}
+.posts {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.more {
+    color: #f58220;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.more:hover {
+    color:#d7721c;
+}
+
+aside{
+    width: 300px;
+    background: #e5e5e5;
+    float: right;
+    padding: 40px 20px;
+
+}
+.size-box ul{
+    margin-left: 10px;
+}
+.size-box ul li{
+    margin-bottom: 10px;
+
+}
+.sidebar-heading, .side-box-heading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    border-bottom: 1px solid #bbbbbb;
+    padding-bottom: 15px;
+    cursor: pointer;
+}
+
+.sidebar-heading:hover, .side-box-heading:hover {
+    color:#d7721c;
+}
+
+#sidebar {
+    color: #f58220;
+    text-decoration: none;
+}
+
+#sidebar:hover {
+    color:#d7721c;
+}
+footer{
+    clear:both;
+    background: #333333;
+    height: 50px;
+    text-align: center;
+}
+footer small{
+    color: #cccccc;
+    font-size: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+footer a {
+    color: #f58220;
+    text-decoration: none;
+}
+</style>
+</html>
