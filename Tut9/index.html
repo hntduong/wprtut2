@@ -13,79 +13,90 @@
         style="position: relative; top:0px; left:0px;"
         width="19"
         height="19">
-        <img
+        <img id="boom"
         style="top: 76px; left: 133px;width: 19px; height: 19px; background-image: url('boom.png');background-size: 100% 100%;position: relative;">
     </div>
         <table>
             <tr>
            <td></td>
            <td>
-               <button onmousedown="moveUp()" onmouseup="clearmove()" ontouchstart="moveUp()">⬆</button>
+               <button id = "topBtn" onmousedown="moveUp()" onmouseup="clearmove()" ontouchstart="moveUp()">⬆</button>
                </td>
                <td></td>
                </tr>
                <tr>
                <td>
-               <button onmousedown="moveLeft()" onmouseup="clearmove()" ontouchstart="moveLeft()">⬅</button></td>
+               <button id="leftBtn" onmousedown="moveLeft()" onmouseup="clearmove()" ontouchstart="moveLeft()">⬅</button></td>
                <td></td>
                <td>
-               <button onmousedown="moveRight()" onmouseup="clearmove()" ontouchstart="moveRight()">➡</button></td>
+               <button id= "rightBtn" onmousedown="moveRight()" onmouseup="clearmove()" ontouchstart="moveRight()">➡</button></td>
                </tr>
                <tr>
                <td></td>
                <td>
-               <button onmousedown="moveDown()" onmouseup="clearmove()" ontouchstart="moveDown()">⬇</button></td>
+               <button id = "bottomBtn" onmousedown="moveDown()" onmouseup="clearmove()" ontouchstart="moveDown()">⬇</button></td>
                <td></td>
                </tr>
                
                </table>
         <script>
-            let field = document.getElementById("field");
-            let tank = document.getElementById("tank");
-            let step = 19;
-    
-            function init() {
-                tank = document.getElementById('tank');
-                tank.style.position = 'relative';
-                tank.style.left = '350px';
-                tank.style.top = '300px';
-            }
-    
-            function moveUp() {
-                if (parseInt(tank.style.top) <= 70 ) {
-                    tank.style.top = parseInt(tank.style.top) + 'px';
-                }
-                else {
-                tank.style.top = parseInt(tank.style.top) - step + 'px';
-                }
-            }
-    
-            function moveDown() {
-                if (parseInt(tank.style.top) >= 160 ) {
-                    tank.style.top = parseInt(tank.style.top) + 'px';
-                }
-                else {
-                tank.style.top = parseInt(tank.style.top) + step + 'px';
-                }
-            }
-    
-            function moveRight() {
-                if (parseInt(tank.style.left) >= 160 ) {
-                    tank.style.left = parseInt(tank.style.left) + 'px';
-                }
-                else {
-                tank.style.left = parseInt(tank.style.left) + step + 'px';
-                }
-            }
-    
-            function moveLeft() {
-                if (parseInt(tank.style.left) <= 0 ) {
-                    tank.style.left = parseInt(tank.style.left) + 'px';
-                }
-                else {
-                tank.style.left = parseInt(tank.style.left) - step + 'px';
-            }
+$(function () {
+    var x = y = 0;
+    let xBoom = Math.floor(Math.random() * 10) * 19;
+    let yBoom = Math.floor(Math.random() * 10) * 19;
+    let tank = $("#tank");
+    let boom = $("#boom");
+    boom.css({
+        "top": yBoom + "px",
+        "left": xBoom + "px"
+    })
+
+    function checkBoom() {
+        if (tank.css("top") == boom.css("top") &&
+            tank.css("left") == boom.css("left")) {
+            tank.css({
+                "background": "url('img/explosion.png')",
+                "border": "1px solid red",
+                "width": "30px",
+                "height": "30px"
+            });
+            boom.hide();
+            setTimeout(restarGame, 1000)
         }
+    }
+
+    function restarGame() {
+        location.reload()
+    }
+    $("#topBtn").click(function () {
+        if (y > 0) {
+            y -= 19
+        } else y -= 0
+        $("#tank").css("top", y + "px")
+        checkBoom()
+    })
+    $("#bottomBtn").click(function () {
+        if (y < $(".arena").innerHeight()-$("#tank").outerHeight()) {
+            y += 19
+        } else y += 0
+        $("#tank").css("top", y + "px")
+        checkBoom()
+    })
+    $("#leftBtn").click(function () {
+        if (x > 0) {
+            x -= 19
+        } else x -= 0
+        $("#tank").css("left", x + "px")
+        checkBoom()
+    })
+    $("#rightBtn").click(function () {
+        if (x < $(".arena").innerWidth()-$("#tank").outerWidth()) {
+            x += 19
+        } else x += 0
+        $("#tank").css("left", x + "px")
+        checkBoom()
+    })
+})
     
         </script>
 </body>
